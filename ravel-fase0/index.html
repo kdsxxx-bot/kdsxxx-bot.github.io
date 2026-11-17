@@ -12,8 +12,8 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-CCrF-wfm.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B246q_UX.css">
+    <script type="module" crossorigin src="./assets/index-BWVAXBaY.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Bf05nTZX.css">
   </head>
   <body>
     <main id="app">
@@ -48,11 +48,16 @@
       <section id="play" class="screen" hidden>
         <header class="top">
           <span id="keyLabel"></span>
-          <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
+          <span class="top-btns">
+            <button id="droneToggle" class="small on" aria-pressed="true">Bordone: sì</button>
+            <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
+          </span>
         </header>
         <div id="staffHost"></div>
         <p id="status" class="status">Ascolta…</p>
         <div id="keypad" class="keypad"></div>
+        <button id="singBtn" class="sing" hidden>Tieni premuto e canta</button>
+        <p id="singHint" class="hint" hidden>Canta l’ultima nota, in qualsiasi ottava</p>
         <div class="row-btns">
           <button id="again">Riascolta</button>
           <button id="next" class="primary" hidden>Avanti</button>
