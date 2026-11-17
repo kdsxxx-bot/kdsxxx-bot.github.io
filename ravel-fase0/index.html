@@ -12,8 +12,8 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-DRGoX7I2.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BcHW4DWm.css">
+    <script type="module" crossorigin src="./assets/index-CZO89xUO.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Xfed72Hv.css">
   </head>
   <body>
     <main id="app">
@@ -73,15 +73,18 @@
           <span id="lessonSteps" class="steps"><span>Ascolta</span><span>Canta</span><span>Prova</span><span>Fine</span></span>
           <button id="lessonClose" class="icon" aria-label="Chiudi la lezione">✕</button>
         </header>
-        <div id="lessonDegrees" class="chips" aria-label="Grado della lezione"></div>
+        <div id="lessonPick" class="chips3" aria-label="Lezione"></div>
         <h2 id="lessonTitle"></h2>
         <div id="lessonStaff" class="staffHost"></div>
         <p id="lessonText" class="lesson-text"></p>
         <div id="lessonKeypad" class="keypad" hidden></div>
-        <button id="lessonSing" class="sing" hidden>Tieni premuto e canta</button>
+        <div class="controls">
+          <button id="lessonPlay" class="play" aria-label="Avvia">▶</button>
+          <button id="lessonSing" class="sing" hidden>Tieni premuto e canta</button>
+          <button id="lessonDrone" class="small drone on" aria-label="Bordone">Bordone</button>
+        </div>
         <div class="row-btns">
-          <button id="lessonAction" class="primary">▶ Ascolta</button>
-          <button id="lessonNext" hidden>Avanti →</button>
+          <button id="lessonNext" class="primary" hidden>Avanti →</button>
         </div>
       </section>
 
