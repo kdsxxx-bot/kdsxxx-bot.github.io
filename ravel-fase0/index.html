@@ -12,11 +12,25 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-DS9h_usd.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B4s95nDX.css">
+    <script type="module" crossorigin src="./assets/index-CFpvWIF6.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CpAydGha.css">
   </head>
   <body>
     <main id="app">
+      <section id="intro" class="screen" hidden>
+        <header class="top">
+          <span id="introCount" class="steps"></span>
+          <button id="introClose" class="icon" aria-label="Chiudi le istruzioni">✕</button>
+        </header>
+        <h2 id="introTitle"></h2>
+        <p id="introText" class="intro-text"></p>
+        <label class="check intro-skip"><input id="introSkip" type="checkbox" /> Non mostrare più all'avvio</label>
+        <div class="row-btns">
+          <button id="introPrev">← Indietro</button>
+          <button id="introNext" class="primary">Avanti →</button>
+        </div>
+      </section>
+
       <section id="start" class="screen">
         <h1>RAVEL <span>M∂ster</span></h1>
         <p class="sub">Fase 0 · prova di bordone, voce e tocco</p>
@@ -103,6 +117,7 @@
         <label class="check"><input id="micOn" type="checkbox" /> Microfono</label>
         <label class="check"><input id="micFilters" type="checkbox" /> Filtri del telefono (eco, rumore, guadagno)</label>
         <div class="row-btns">
+          <button id="openIntro">Istruzioni</button>
           <button id="recalib">Ripeti taratura</button>
           <button id="copyReport" class="primary">Copia rapporto</button>
         </div>
