@@ -12,8 +12,8 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-Cd2rtdgO.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Df8i-jRC.css">
+    <script type="module" crossorigin src="./assets/index-BwLRKQ2Y.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DL6m1rX1.css">
   </head>
   <body>
     <main id="app">
@@ -48,16 +48,16 @@
       <section id="play" class="screen" hidden>
         <header class="top">
           <span id="keyLabel"></span>
-          <span class="top-btns">
-            <button id="playToggle" class="small" aria-pressed="false">▶ Play</button>
-            <button id="droneToggle" class="small on" aria-pressed="true">Bordone: sì</button>
-            <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
-          </span>
+          <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
         </header>
         <div id="staffHost"></div>
-        <p id="status" class="status">In pausa: premi Play</p>
+        <p id="status" class="status">In pausa: premi ▶</p>
         <div id="keypad" class="keypad"></div>
-        <button id="singBtn" class="sing" hidden>Tieni premuto e canta</button>
+        <div class="controls">
+          <button id="playToggle" class="play" aria-label="Avvia" aria-pressed="false">▶</button>
+          <button id="singBtn" class="sing" hidden>Tieni premuto e canta</button>
+          <button id="droneToggle" class="small drone on" aria-pressed="true" aria-label="Bordone acceso">Bordone</button>
+        </div>
         <p id="singHint" class="hint" hidden>Canta l’ultima nota, in qualsiasi ottava</p>
         <div class="row-btns">
           <button id="again">Riascolta</button>
