@@ -12,8 +12,8 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-BwLRKQ2Y.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DL6m1rX1.css">
+    <script type="module" crossorigin src="./assets/index-DRGoX7I2.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BcHW4DWm.css">
   </head>
   <body>
     <main id="app">
@@ -48,7 +48,10 @@
       <section id="play" class="screen" hidden>
         <header class="top">
           <span id="keyLabel"></span>
-          <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
+          <span class="top-btns">
+            <button id="openLesson" class="small">Lezione</button>
+            <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
+          </span>
         </header>
         <div id="staffHost"></div>
         <p id="status" class="status">In pausa: premi ▶</p>
@@ -62,6 +65,23 @@
         <div class="row-btns">
           <button id="again">Riascolta</button>
           <button id="next" class="primary" hidden>Avanti</button>
+        </div>
+      </section>
+
+      <section id="lesson" class="screen" hidden>
+        <header class="top">
+          <span id="lessonSteps" class="steps"><span>Ascolta</span><span>Canta</span><span>Prova</span><span>Fine</span></span>
+          <button id="lessonClose" class="icon" aria-label="Chiudi la lezione">✕</button>
+        </header>
+        <div id="lessonDegrees" class="chips" aria-label="Grado della lezione"></div>
+        <h2 id="lessonTitle"></h2>
+        <div id="lessonStaff" class="staffHost"></div>
+        <p id="lessonText" class="lesson-text"></p>
+        <div id="lessonKeypad" class="keypad" hidden></div>
+        <button id="lessonSing" class="sing" hidden>Tieni premuto e canta</button>
+        <div class="row-btns">
+          <button id="lessonAction" class="primary">▶ Ascolta</button>
+          <button id="lessonNext" hidden>Avanti →</button>
         </div>
       </section>
 
