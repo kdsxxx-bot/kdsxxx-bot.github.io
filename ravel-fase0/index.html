@@ -12,8 +12,8 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-C9Iq_N43.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B37s1XBu.css">
+    <script type="module" crossorigin src="./assets/index-Ca6RnGbu.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-dd7I-KXg.css">
   </head>
   <body>
     <main id="app">
@@ -25,11 +25,22 @@
         <h2 id="introTitle"></h2>
         <div id="introStaff" class="staffHost" hidden></div>
         <div id="introText" class="intro-text"></div>
-        <button id="introPlay" class="play small-play" aria-label="Ascolta l'esempio" hidden>▶</button>
+        <button id="introPlay" class="play play-word" aria-label="Ascolta l'esempio" hidden>▶ Ascolta</button>
         <label class="check intro-skip"><input id="introSkip" type="checkbox" /> Non mostrare più all'avvio</label>
         <div class="row-btns">
           <button id="introPrev">← Indietro</button>
           <button id="introNext" class="primary">Avanti →</button>
+        </div>
+      </section>
+
+      <section id="method" class="screen" hidden>
+        <header class="top">
+          <span class="steps">Il metodo nel dettaglio</span>
+          <button id="methodClose" class="icon" aria-label="Chiudi">✕</button>
+        </header>
+        <article id="methodText" class="method-text"></article>
+        <div class="row-btns">
+          <button id="methodBack">← Indietro</button>
         </div>
       </section>
 
@@ -96,7 +107,7 @@
         <p id="lessonText" class="lesson-text"></p>
         <div id="lessonKeypad" class="keypad" hidden></div>
         <div class="controls">
-          <button id="lessonPlay" class="play" aria-label="Avvia">▶</button>
+          <button id="lessonPlay" class="play play-word" aria-label="Ascolta">▶ Ascolta</button>
           <button id="lessonSing" class="sing" hidden>Tieni premuto e canta</button>
           <button id="lessonDrone" class="small drone on" aria-label="Bordone">Bordone</button>
         </div>
@@ -121,6 +132,7 @@
         <label class="check"><input id="micFilters" type="checkbox" /> Filtri del telefono (eco, rumore, guadagno)</label>
         <div class="row-btns">
           <button id="openIntro">Istruzioni</button>
+          <button id="openMethod">Il metodo nel dettaglio</button>
           <button id="recalib">Ripeti taratura</button>
           <button id="copyReport" class="primary">Copia rapporto</button>
         </div>
