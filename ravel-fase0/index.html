@@ -12,8 +12,8 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/main-abfoct9b.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/main-3YLB0d8c.css">
+    <script type="module" crossorigin src="./assets/main-BPZsNLoc.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/main-BgDJgELO.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -23,14 +23,20 @@
           <span id="introCount" class="steps"></span>
           <button id="introClose" class="icon" aria-label="Chiudi le istruzioni">✕</button>
         </header>
-        <h2 id="introTitle"></h2>
-        <div id="introStaff" class="staffHost" hidden></div>
-        <div id="introText" class="intro-text"></div>
-        <button id="introPlay" class="play play-word" aria-label="Ascolta l'esempio" hidden>▶ Ascolta</button>
-        <label class="check intro-skip"><input id="introSkip" type="checkbox" /> Non mostrare più all'avvio</label>
         <div class="row-btns intro-nav">
           <button id="introPrev">← Indietro</button>
+          <span id="introDots" class="intro-dots" aria-hidden="true"></span>
           <button id="introNext" class="primary">Avanti →</button>
+        </div>
+        <label class="check intro-skip"><input id="introSkip" type="checkbox" /> Non mostrare più all'avvio</label>
+        <div class="intro-body">
+          <div class="intro-card">
+            <h2 id="introTitle"></h2>
+            <div id="introStaff" class="staffHost" hidden></div>
+            <div id="introText" class="intro-text"></div>
+            <button id="introPlay" class="play play-word" aria-label="Ascolta l'esempio" hidden>▶ Ascolta</button>
+          </div>
+          <button id="introPeek" class="intro-peek" aria-label="Scheda successiva"></button>
         </div>
       </section>
 
@@ -64,6 +70,7 @@
 
       <dialog id="homeMenu" class="sheet" aria-label="Menu">
         <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
+        <button class="item" id="homeQuick">Avvio rapido</button>
         <button class="item" id="homeIntro">Istruzioni</button>
         <button class="item" id="homeMethod">Il metodo nel dettaglio</button>
         <button class="item" id="openPlan">Piano di studi</button>
