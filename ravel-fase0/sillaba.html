@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Sillaba cantata · prova beta · RAVEL M∂ster</title>
+    <script type="module" crossorigin src="./assets/sillaba-DA2-c_Aa.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/pitch-C8qMsWO7.js">
+    <link rel="stylesheet" crossorigin href="./assets/pitch-DquOSRm2.css">
+  </head>
+  <body>
+    <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
+    <main id="app">
+      <section class="screen syl-screen">
+        <header class="top home-top">
+          <span class="brand">Sillaba cantata · prova</span>
+        </header>
+        <p class="sub">Prova per i beta tester: l’app ascolta la vocale e l’altezza insieme. Ti dice che cosa ha sentito; non conta come esercizio e non boccia mai.</p>
+        <div class="seg syl-pick" id="sylPick"></div>
+        <p id="sylAsk" class="syl-ask"></p>
+        <button id="sylPlay" class="play play-word">▶ Ascolta</button>
+        <p id="sylMsg" class="status syl-msg"></p>
+        <button id="sylSing" class="sing" disabled>Tieni premuto e canta</button>
+        <p class="sub syl-note">Ascolta la cadenza e la nota, poi cantala con la sua sillaba. Con le cuffie va meglio.</p>
+      </section>
+    </main>
+  </body>
+</html>
