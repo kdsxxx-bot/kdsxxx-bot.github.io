@@ -12,7 +12,7 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/main-Bi34k02z.js"></script>
+    <script type="module" crossorigin src="./assets/main-DKeT2Agw.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/main-CwDlgzx8.css">
   </head>
   <body>
@@ -153,6 +153,7 @@
         <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
         <div class="sheet-head"><h2 id="settingsTitle">Impostazioni</h2><button id="closeX" class="icon" aria-label="Chiudi">✕</button></div>
         <div class="sheet-scroll">
+          <button class="item" id="audioRebuild">Non senti l’audio? Tocca qui per riattivarlo</button>
           <div class="opt"><span>Vista dei gradi</span>
             <div class="seg" data-for="viewSelect"><button data-v="spiral">Spirale</button><button data-v="rows">Righe</button></div></div>
           <div class="opt"><span>Nomi accanto ai gradi</span>
@@ -165,7 +166,10 @@
           <div class="opt"><span>Animazioni</span>
             <div class="seg" data-for="animOn"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
           <div class="opt"><span>Tonalità</span>
-            <select id="keySelect"><option value="">Casuale (cambia ogni 5)</option></select></div>
+            <select id="keySelect"><option value="">Casuale</option></select></div>
+          <div class="opt"><span>Cambio di tonalità</span>
+            <div class="seg" data-for="keyChange"><button data-v="auto">Automatico</button><button data-v="1">Dopo 1 domanda</button><button data-v="3">Dopo 3</button><button data-v="5">Dopo 5</button></div>
+            <small>Automatico: la tonalità resta ferma all'inizio e cambia sempre più spesso man mano che riconosci i gradi.</small></div>
           <div class="opt"><span>Bordone</span>
             <input id="droneLevel" type="range" min="0" max="0.6" step="0.05" value="0.25" aria-label="Volume del bordone" /></div>
           <div class="opt"><span>Velocità: <b id="speedValue">moderata</b></span>
@@ -181,6 +185,7 @@
           <div hidden>
             <select id="viewSelect"><option value="spiral" selected>Spirale</option><option value="rows">Righe</option></select>
             <select id="labelMode"><option value="syl" selected>do re mi</option><option value="notes">Note reali</option><option value="none">Nessuno</option></select>
+            <select id="keyChange"><option value="auto" selected>Automatico</option><option value="1">1</option><option value="3">3</option><option value="5">5</option></select>
             <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="animOn" type="checkbox" /><input id="micFilters" type="checkbox" />
           </div>
         </div>
