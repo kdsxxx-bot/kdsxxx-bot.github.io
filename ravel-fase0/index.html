@@ -12,10 +12,11 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-Cw4c_ilT.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-dd7I-KXg.css">
+    <script type="module" crossorigin src="./assets/index-WH_VauiJ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CvJGxegB.css">
   </head>
   <body>
+    <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
     <main id="app">
       <section id="intro" class="screen" hidden>
         <header class="top">
@@ -27,7 +28,7 @@
         <div id="introText" class="intro-text"></div>
         <button id="introPlay" class="play play-word" aria-label="Ascolta l'esempio" hidden>▶ Ascolta</button>
         <label class="check intro-skip"><input id="introSkip" type="checkbox" /> Non mostrare più all'avvio</label>
-        <div class="row-btns">
+        <div class="row-btns intro-nav">
           <button id="introPrev">← Indietro</button>
           <button id="introNext" class="primary">Avanti →</button>
         </div>
@@ -65,6 +66,7 @@
         <p class="sub">Quattro colpi per prendere il tempo, poi otto colpi: tocca il cerchio insieme a ognuno.</p>
         <button id="tapPad" class="pad" aria-label="Tocca a tempo"></button>
         <p id="calibMsg" class="msg"></p>
+        <p id="calibCheck" class="msg"></p>
         <div class="row-btns">
           <button id="calibStart" class="primary">Avvia</button>
           <button id="calibSkip">Salta</button>
@@ -97,7 +99,7 @@
 
       <section id="lesson" class="screen" hidden>
         <header class="top">
-          <span id="lessonSteps" class="steps"><span>Ascolta</span><span>Canta</span><span>Prova</span><span>Fine</span></span>
+          <span id="lessonSteps" class="steps"><span>Ascolta</span><span>Canta</span><span>Prova</span></span>
           <button id="lessonClose" class="icon" aria-label="Chiudi la lezione">✕</button>
         </header>
         <div id="lessonPick" class="chips3" aria-label="Lezione"></div>
