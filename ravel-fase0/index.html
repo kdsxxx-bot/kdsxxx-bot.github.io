@@ -12,8 +12,8 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/index-WH_VauiJ.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-CvJGxegB.css">
+    <script type="module" crossorigin src="./assets/index-BIjVT6LT.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-1E0VMqxS.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -45,9 +45,35 @@
         </div>
       </section>
 
-      <section id="start" class="screen">
+      <section id="home" class="screen">
+        <header class="top home-top">
+          <span class="brand">RAVEL <span>M∂ster</span></span>
+          <button id="homeMenuBtn" class="icon" aria-label="Menu">☰</button>
+        </header>
+        <div id="homeSpiral" class="home-host"></div>
+        <div class="home-bottom">
+          <button id="ascend" class="primary ascend">Ascendi</button>
+          <p id="nextStep" class="next-step"></p>
+        </div>
+      </section>
+
+      <section id="plan" class="screen" hidden>
+        <header class="top dlg-top"><h2>Piano di studi</h2><button id="planClose" class="icon" aria-label="Chiudi">✕</button></header>
+        <div id="planBody" class="plan-body"></div>
+      </section>
+
+      <dialog id="homeMenu">
+        <header class="top dlg-top"><h2>Menu</h2><button id="homeMenuX" class="icon" aria-label="Chiudi">✕</button></header>
+        <div class="menu-list">
+          <button id="openPlan">Piano di studi</button>
+          <button id="homeMethod">Il metodo nel dettaglio</button>
+          <button id="homeSettings">Impostazioni</button>
+        </div>
+      </dialog>
+
+      <section id="start" class="screen" hidden>
         <h1>RAVEL <span>M∂ster</span></h1>
-        <p class="sub">Fase 0 · prova di bordone, voce e tocco</p>
+        <p class="sub">Primo accesso: due domande, poi la taratura (una volta sola su questo dispositivo)</p>
         <div class="ask">
           <p>Hai le cuffie?</p>
           <div class="seg" data-key="headphones"><button data-v="1">Sì</button><button data-v="0" class="on">No</button></div>
@@ -78,6 +104,7 @@
         <header class="top">
           <span id="keyLabel"></span>
           <span class="top-btns">
+            <button id="playHome" class="icon" aria-label="Torna alla spirale">⌂</button>
             <button id="openLesson" class="small">Lezione</button>
             <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
           </span>
@@ -116,6 +143,7 @@
         <div class="row-btns">
           <button id="lessonPrev" hidden>← Indietro</button>
           <button id="lessonSkip" hidden>Salta il canto →</button>
+          <button id="lessonToTry" hidden>Salta la lezione →</button>
           <button id="lessonNext" class="primary" hidden>Avanti →</button>
         </div>
       </section>
@@ -131,6 +159,7 @@
         <label>Nomi accanto ai gradi <select id="labelMode"><option value="syl" selected>Do mobile (do re mi…)</option><option value="notes">Note reali (C D E…)</option><option value="none">Nessuno</option></select></label>
         <label class="check"><input id="headphonesOn" type="checkbox" /> Cuffie (il bordone resta acceso mentre canti)</label>
         <label class="check"><input id="micOn" type="checkbox" /> Microfono</label>
+        <label class="check"><input id="animOn" type="checkbox" /> Animazioni</label>
         <label class="check"><input id="micFilters" type="checkbox" /> Filtri del telefono (eco, rumore, guadagno)</label>
         <div class="row-btns">
           <button id="openIntro">Istruzioni</button>
