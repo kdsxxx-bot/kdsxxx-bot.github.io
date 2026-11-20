@@ -12,9 +12,9 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/main-BosoC3ce.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/meter-892Wz27E.js">
-    <link rel="stylesheet" crossorigin href="./assets/meter-DPpKV_wk.css">
+    <script type="module" crossorigin src="./assets/main-B26Nmmjt.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-DDiPsQY3.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-Dxi8VqkY.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -80,6 +80,17 @@
         <button class="btn-close" id="homeMenuX">Chiudi</button>
       </dialog>
 
+      <dialog id="examSheet" class="sheet" aria-labelledby="examTitle">
+        <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
+        <h2 id="examTitle"></h2>
+        <ul id="examLines" class="exam-lines"></ul>
+        <p id="examAdvice" class="sheet-note"></p>
+        <div class="row-btns">
+          <button id="examLater">Non ora</button>
+          <button id="examStart" class="primary">Inizia</button>
+        </div>
+      </dialog>
+
       <section id="start" class="screen" hidden>
         <h1>RAVEL <span>M∂ster</span></h1>
         <p class="sub">Primo accesso: due domande, poi la taratura (una volta sola su questo dispositivo)</p>
@@ -119,7 +130,10 @@
           </span>
         </header>
         <div id="groupRow" class="group-row" role="group" aria-label="Lezioni del Gradus I"></div>
-        <div id="ladderRow" class="ladder-row" aria-hidden="true"></div>
+        <div class="ladder-line">
+          <div id="ladderRow" class="ladder-row" aria-hidden="true"></div>
+          <button id="examEntry" class="small exam-entry">Esamino</button>
+        </div>
         <p id="modeLine" class="mode-line"></p>
         <div id="staffHost"></div>
         <div id="voiceMeterHost" class="voice-meter"></div>
@@ -133,7 +147,6 @@
         <p id="singHint" class="hint" hidden>Canta l’ultima nota, in qualsiasi ottava</p>
         <div class="row-btns">
           <button id="again">Riascolta</button>
-          <button id="esaminoBtn" hidden>Esamino</button>
           <button id="next" class="primary" hidden>Avanti</button>
         </div>
       </section>
