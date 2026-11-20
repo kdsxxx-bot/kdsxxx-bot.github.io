@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Intonation · RAVEL M∂ster</title>
+    <script type="module" crossorigin src="./assets/intonation-DeucoWKc.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-CyNU0wfa.js">
+    <link rel="modulepreload" crossorigin href="./assets/sheet-B4-WdQs3.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-V-HiRIKE.css">
+    <link rel="stylesheet" crossorigin href="./assets/intonation-C2XRhudd.css">
+  </head>
+  <body>
+    <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
+    <main id="app" class="into">
+      <!-- Home della materia -->
+      <section id="iHome" class="screen">
+        <header class="top home-top">
+          <span class="brand">Intonation</span>
+          <button id="iMenuBtn" class="icon" aria-label="Menu">☰</button>
+        </header>
+        <p class="into-sub">Sentire se una nota è giusta, calante o crescente.</p>
+        <ol id="iLevels" class="into-levels"></ol>
+        <div class="home-bottom">
+          <button id="iGo" class="primary ascend">Inizia</button>
+          <p id="iNext" class="next-step"></p>
+        </div>
+      </section>
+
+      <!-- Con che cosa ascolti -->
+      <section id="iListen" class="screen" hidden>
+        <h2 class="serif-title">Con che cosa ascolti?</h2>
+        <p class="sub">Per scendere sotto i 15 cents servono cuffie o casse buone. Con l'altoparlante del telefono il traguardo si ferma a 15.</p>
+        <div class="choice-list">
+          <button data-listen="headphones">Cuffie</button>
+          <button data-listen="speakers">Casse</button>
+          <button data-listen="phone">Altoparlante del telefono</button>
+        </div>
+      </section>
+
+      <!-- Taratura (solo se non è già stata fatta per il Core su questo dispositivo) -->
+      <section id="iCalib" class="screen" hidden>
+        <h2 class="serif-title">Taratura</h2>
+        <p class="sub">Quattro colpi per prendere il tempo, poi otto colpi: tocca il cerchio insieme a ognuno. Si fa una volta sola su questo dispositivo.</p>
+        <button id="iPad" class="pad" aria-label="Tocca a tempo"></button>
+        <p id="iCalibMsg" class="msg"></p>
+        <div class="row-btns">
+          <button id="iCalibStart" class="primary">Avvia</button>
+          <button id="iCalibSkip">Salta</button>
+          <button id="iCalibNext" class="primary" hidden>Continua</button>
+        </div>
+      </section>
+
+      <!-- Istruzioni del livello e Lezione del Maestro: stesse schede -->
+      <section id="iCards" class="screen" hidden>
+        <header class="top">
+          <span id="iCardCount" class="mode"></span>
+          <button id="iCardsClose" class="icon" aria-label="Chiudi">✕</button>
+        </header>
+        <h2 id="iCardTitle" class="serif-title"></h2>
+        <div id="iCardText" class="card-text"></div>
+        <div class="play-row"><button id="iCardPlay" class="play" hidden>▶ <span>Ascolta</span></button></div>
+        <div class="row-btns">
+          <button id="iCardPrev">← Indietro</button>
+          <button id="iCardNext" class="primary">Avanti →</button>
+        </div>
+        <button id="iCardSkip" class="link-btn" hidden>Salta la lezione →</button>
+      </section>
+
+      <!-- Esercizio -->
+      <section id="iEx" class="screen" hidden>
+        <header class="top">
+          <button id="iExHome" class="icon" aria-label="Torna a Intonation">⌂</button>
+          <span id="iExTitle" class="mode"></span>
+          <span id="iDots" class="dots" aria-hidden="true"></span>
+        </header>
+        <p id="iPrompt" class="into-prompt"></p>
+        <!-- Indicatore verticale della voce mentre si canta (questione 87), a destra -->
+        <div id="iVoiceMeterHost" class="into-voice-meter"></div>
+        <!-- Misuratore del riscontro: il centro è il giusto più vicino -->
+        <div id="iMeter" class="fbm" aria-hidden="true">
+          <span class="fbm-line"></span><span class="fbm-mid"></span>
+          <span id="iMeterNote" class="fbm-mark"></span><span id="iMeterVoice" class="fbm-mark voice" hidden></span>
+          <span class="fbm-lab l">calante</span><span class="fbm-lab r">crescente</span>
+        </div>
+        <div class="play-row">
+          <button id="iPlay" class="play">▶ <span>Ascolta</span></button>
+        </div>
+        <div id="iAnswer" class="answer"></div>
+        <div id="iKnob" class="knob" hidden>
+          <input id="iKnobRange" type="range" min="-60" max="60" step="0.5" value="0" aria-label="Manopola d'accordatura" />
+          <div class="row-btns"><button id="iKnobDone" class="primary">Fatto</button></div>
+        </div>
+        <div id="iSing" hidden>
+          <button id="iSingHold" class="hold">Tieni premuto e canta</button>
+        </div>
+        <div id="iFeedback" class="feedback" hidden>
+          <p id="iVerdict" class="verdict-word"></p>
+          <p id="iFbText" class="sub"></p>
+          <div class="row-btns">
+            <button id="iFbHear">▶ Senti la differenza</button>
+            <button id="iFbNext" class="primary">Avanti</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fine di una prova o di un livello -->
+      <section id="iEnd" class="screen" hidden>
+        <h2 id="iEndTitle" class="serif-title"></h2>
+        <p id="iEndText" class="sub"></p>
+        <div class="row-btns col">
+          <button id="iEndVoice" hidden>Vuoi mettere alla prova la tua voce?</button>
+          <button id="iEndNext" class="primary">Avanti</button>
+        </div>
+      </section>
+
+      <!-- Il metodo nel dettaglio -->
+      <section id="iMethod" class="screen" hidden>
+        <header class="top dlg-top"><h2>Il metodo nel dettaglio</h2><button id="iMethodClose" class="icon" aria-label="Chiudi">✕</button></header>
+        <div id="iMethodText" class="method-text"></div>
+      </section>
+
+      <dialog id="iMenu" class="sheet" aria-label="Menu">
+        <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
+        <button class="item" id="iMenuIntro">Istruzioni</button>
+        <button class="item" id="iMenuMethod">Il metodo nel dettaglio</button>
+        <button class="item" id="iMenuSettings">Impostazioni</button>
+        <a class="item" href="./">Torna al Core</a>
+        <p id="iBuild" class="sheet-note"></p>
+        <button class="btn-close" id="iMenuX">Chiudi</button>
+      </dialog>
+
+      <dialog id="iSettings" class="sheet" aria-labelledby="iSetTitle">
+        <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
+        <div class="sheet-head"><h2 id="iSetTitle">Impostazioni</h2><button id="iSetX" class="icon" aria-label="Chiudi">✕</button></div>
+        <div class="sheet-scroll">
+          <div class="opt"><span>Ascolto</span>
+            <div class="seg" id="iSegListen"><button data-v="headphones">Cuffie</button><button data-v="speakers">Casse</button><button data-v="phone">Telefono</button></div></div>
+          <div class="opt"><span>Microfono (per cantare)</span>
+            <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
+          <div class="opt"><span>Barra dell'intonazione nel livello 3</span>
+            <div class="seg" id="iSegMeter3"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
+          <details class="adv"><summary>Per il collaudo</summary>
+            <button class="item" id="iRecalib">Ripeti la taratura</button>
+            <button class="item" id="iReset">Ricomincia Intonation da capo</button>
+            <button class="item" id="iCopy">Copia rapporto</button>
+            <textarea id="iReport" readonly hidden></textarea>
+          </details>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>
