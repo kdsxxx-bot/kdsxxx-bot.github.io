@@ -12,11 +12,11 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/main-WV10MkOo.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/meter-CyNU0wfa.js">
-    <link rel="modulepreload" crossorigin href="./assets/pitch-DppHcdfh.js">
-    <link rel="modulepreload" crossorigin href="./assets/sheet-B4-WdQs3.js">
-    <link rel="stylesheet" crossorigin href="./assets/meter-V-HiRIKE.css">
+    <script type="module" crossorigin src="./assets/main-lJJYRFGH.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-GJERvkTB.js">
+    <link rel="modulepreload" crossorigin href="./assets/pitch-B6ct3ZxI.js">
+    <link rel="modulepreload" crossorigin href="./assets/sheet-DwgUvzxZ.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-CDtdpxoy.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -39,7 +39,6 @@
             <div id="introText" class="intro-text"></div>
             <button id="introPlay" class="play play-word" aria-label="Ascolta l'esempio" hidden>▶ Ascolta</button>
           </div>
-          <button id="introPeek" class="intro-peek" aria-label="Scheda successiva"></button>
         </div>
       </section>
 
@@ -73,8 +72,8 @@
 
       <dialog id="homeMenu" class="sheet" aria-label="Menu">
         <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
-        <button class="item" id="homeQuick">Avvio rapido</button>
-        <button class="item" id="homeIntro">Istruzioni</button>
+        <button class="item" id="homeQuick">Guida rapida</button>
+        <button class="item" id="homeIntro">Guida completa</button>
         <button class="item" id="homeMethod">Il metodo nel dettaglio</button>
         <button class="item" id="openPlan">Piano di studi</button>
         <button class="item" id="homeSettings">Impostazioni</button>
@@ -111,6 +110,7 @@
 
       <section id="calib" class="screen" hidden>
         <h2>Taratura</h2>
+        <p class="sub calib-why">Stiamo tarando il tuo dispositivo: misuriamo il ritardo dell'audio. Potrai scegliere di rifarlo, se necessario.</p>
         <p class="sub">Quattro colpi per prendere il tempo, poi otto colpi: tocca il cerchio insieme a ognuno.</p>
         <button id="tapPad" class="pad" aria-label="Tocca a tempo"></button>
         <p id="calibMsg" class="msg"></p>
@@ -194,7 +194,7 @@
           <div class="opt"><span>Tonalità</span>
             <select id="keySelect"><option value="">Casuale</option></select></div>
           <div class="opt"><span>Cambio di tonalità</span>
-            <div class="seg" data-for="keyChange"><button data-v="auto">Automatico</button><button data-v="1">Dopo 1 domanda</button><button data-v="3">Dopo 3</button><button data-v="5">Dopo 5</button></div>
+            <div class="seg" data-for="keyChange"><button data-v="auto">Automatico</button><button data-v="1">Dopo 1 domanda</button><button data-v="3">Dopo 3</button><button data-v="5">Dopo 5</button><button data-v="never">Mai</button></div>
             <small>Automatico: la tonalità resta ferma all'inizio e cambia sempre più spesso man mano che riconosci i gradi.</small></div>
           <div class="opt"><span>Bordone</span>
             <input id="droneLevel" type="range" min="0" max="0.6" step="0.05" value="0.25" aria-label="Volume del bordone" /></div>
@@ -211,7 +211,7 @@
           <div hidden>
             <select id="viewSelect"><option value="spiral" selected>Spirale</option><option value="rows">Righe</option></select>
             <select id="labelMode"><option value="syl" selected>do re mi</option><option value="notes">Note reali</option><option value="none">Nessuno</option></select>
-            <select id="keyChange"><option value="auto" selected>Automatico</option><option value="1">1</option><option value="3">3</option><option value="5">5</option></select>
+            <select id="keyChange"><option value="auto" selected>Automatico</option><option value="1">1</option><option value="3">3</option><option value="5">5</option><option value="never">Mai</option></select>
             <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" />
           </div>
         </div>
