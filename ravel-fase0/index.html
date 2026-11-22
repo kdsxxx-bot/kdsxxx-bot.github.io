@@ -12,11 +12,11 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/main-lJJYRFGH.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/meter-GJERvkTB.js">
-    <link rel="modulepreload" crossorigin href="./assets/pitch-B6ct3ZxI.js">
-    <link rel="modulepreload" crossorigin href="./assets/sheet-DwgUvzxZ.js">
-    <link rel="stylesheet" crossorigin href="./assets/meter-CDtdpxoy.css">
+    <script type="module" crossorigin src="./assets/main-CqPdfvHf.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-CNouC23l.js">
+    <link rel="modulepreload" crossorigin href="./assets/pitch-CtT93OWb.js">
+    <link rel="modulepreload" crossorigin href="./assets/sheet-D8TWAVBi.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-BSRHIhDc.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -137,6 +137,8 @@
           <button id="examEntry" class="small exam-entry">Esamino</button>
         </div>
         <p id="modeLine" class="mode-line"></p>
+        <!-- Q88: domande sugli intervalli in coda all'esamino del gruppo -->
+        <div id="ivHost" hidden></div>
         <div id="staffHost"></div>
         <div id="voiceMeterHost" class="voice-meter"></div>
         <p id="status" class="status">In pausa: premi ▶</p>
@@ -162,6 +164,8 @@
         <h2 id="lessonTitle"></h2>
         <p id="lessonChords" class="chord-line" aria-live="polite"></p>
         <div id="lessonStaff" class="staffHost"></div>
+        <!-- Tastiera in do: L1 «Tono e semitono», L2 «Le seconde» (Sandro, 22 nov.) -->
+        <div id="lessonKb" class="lesson-kb" hidden></div>
         <p id="lessonText" class="lesson-text"></p>
         <div id="lessonKeypad" class="keypad" hidden></div>
         <div class="controls">
@@ -175,6 +179,38 @@
           <button id="lessonToTry" hidden>Salta la lezione →</button>
           <button id="lessonNext" class="primary" hidden>Avanti →</button>
         </div>
+      </section>
+
+      <!-- Lezioni L4–L10 del Gradus I (Q88) -->
+      <section id="lessonx" class="screen" hidden>
+        <header class="top">
+          <span id="lxSteps" class="steps"><span>Ascolta</span><span>Canta</span><span>Prova</span><span>Esamino</span></span>
+          <button id="lxClose" class="icon" aria-label="Chiudi la lezione">✕</button>
+        </header>
+        <h2 id="lxTitle"></h2>
+        <p id="lxText" class="lesson-text"></p>
+        <div id="lxHost"></div>
+        <div class="controls">
+          <button id="lxPlay" class="play play-word" aria-label="Ascolta">▶ Ascolta</button>
+          <button id="lxDrone" class="small drone" aria-label="Bordone spento">Bordone</button>
+        </div>
+        <div class="row-btns">
+          <button id="lxPrev" hidden>← Indietro</button>
+          <button id="lxSkip" hidden>Salta la lezione →</button>
+          <button id="lxNext" class="primary" hidden>Avanti →</button>
+        </div>
+      </section>
+
+      <!-- Esame del Gradus I (Q88) -->
+      <section id="exam" class="screen" hidden>
+        <header class="top">
+          <span class="steps">Esame del Gradus I</span>
+          <button id="exClose" class="icon" aria-label="Chiudi l’esame">✕</button>
+        </header>
+        <h2 id="exTitle"></h2>
+        <div id="exText" class="lesson-text"></div>
+        <div id="exHost"></div>
+        <div id="exButtons" class="row-btns"></div>
       </section>
 
       <dialog id="settings" class="sheet" aria-labelledby="settingsTitle">
@@ -196,6 +232,9 @@
           <div class="opt"><span>Cambio di tonalità</span>
             <div class="seg" data-for="keyChange"><button data-v="auto">Automatico</button><button data-v="1">Dopo 1 domanda</button><button data-v="3">Dopo 3</button><button data-v="5">Dopo 5</button><button data-v="never">Mai</button></div>
             <small>Automatico: la tonalità resta ferma all'inizio e cambia sempre più spesso man mano che riconosci i gradi.</small></div>
+          <div class="opt"><span>Ritorno alla tonica sempre</span>
+            <div class="seg" data-for="returnAlways"><button data-v="1">Sì</button><button data-v="0">No</button></div>
+            <small>Negli ultimi gradini prima dell'esame e all'esame il ritorno suona solo dopo un errore. Con «Sì» suona sempre.</small></div>
           <div class="opt"><span>Bordone</span>
             <input id="droneLevel" type="range" min="0" max="0.6" step="0.05" value="0.25" aria-label="Volume del bordone" /></div>
           <div class="opt"><span>Velocità: <b id="speedValue">moderata</b></span>
@@ -212,7 +251,7 @@
             <select id="viewSelect"><option value="spiral" selected>Spirale</option><option value="rows">Righe</option></select>
             <select id="labelMode"><option value="syl" selected>do re mi</option><option value="notes">Note reali</option><option value="none">Nessuno</option></select>
             <select id="keyChange"><option value="auto" selected>Automatico</option><option value="1">1</option><option value="3">3</option><option value="5">5</option><option value="never">Mai</option></select>
-            <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" />
+            <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" /><input id="returnAlways" type="checkbox" />
           </div>
         </div>
       </dialog>
