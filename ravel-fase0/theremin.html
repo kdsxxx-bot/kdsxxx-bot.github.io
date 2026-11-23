@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Theremin a mani · prova</title>
-    <script type="module" crossorigin src="./assets/theremin-BIwow5OV.js"></script>
+    <script type="module" crossorigin src="./assets/theremin-DP7OxJ-7.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/theme-B0y3MG38.js">
     <link rel="stylesheet" crossorigin href="./assets/theme-DstIB5jK.css">
     <link rel="stylesheet" crossorigin href="./assets/theremin-BffzeB3f.css">
@@ -25,7 +25,7 @@
           <h2>Suona con le mani</h2>
           <div class="intro-text">
             <p>Appoggia l'iPhone in verticale davanti a te, a un braccio di distanza, con la fotocamera frontale verso di te.</p>
-            <p>La <strong>mano destra</strong> dà l'altezza: più in alto, più acuto. La <strong>mano sinistra</strong> dà il volume: aperta suona, chiusa a <strong>pugno</strong> tace.</p>
+            <p>La <strong>mano destra</strong> dà l'altezza: più in alto, più acuto. La <strong>mano sinistra</strong> dà il volume: più in alto, più forte; chiusa a <strong>pugno</strong> tace. Se sei mancino, nella prova puoi scambiarle.</p>
             <p>Sul <strong>bordone</strong> senti una nota: trovala con la mano e resta fermo un secondo e mezzo. Poi il giudizio.</p>
             <p>Il video resta sul telefono: non si salva e non esce.</p>
           </div>
@@ -41,6 +41,7 @@
           <span id="tTitle" class="steps">Theremin a mani</span>
           <button class="icon" data-close aria-label="Chiudi">✕</button>
         </header>
+        <div class="seg tm-seg" id="tHand" aria-label="Mano dell'altezza"><button data-v="right" aria-pressed="true">Altezza a destra</button><button data-v="left" aria-pressed="false">Mancino</button></div>
         <div class="seg tm-seg" id="tMode"><button data-v="find" aria-pressed="true">Trova la nota</button><button data-v="free" aria-pressed="false">Suona libero</button></div>
         <p id="tPrompt" class="tm-prompt"></p>
         <div class="tm-stage">
