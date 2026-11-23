@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>Parnassum M∂ster Intonation</title>
-    <script type="module" crossorigin src="./assets/intonation-CN8puXRg.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/meter-DkpRAqMU.js">
-    <link rel="modulepreload" crossorigin href="./assets/sheet-Bz7JgDGW.js">
-    <link rel="stylesheet" crossorigin href="./assets/meter-D4-rPLUs.css">
+    <script type="module" crossorigin src="./assets/intonation-BHa6pkBc.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-BkEJMBfz.js">
+    <link rel="modulepreload" crossorigin href="./assets/sheet-DK6K673R.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-CKKfa6u8.css">
     <link rel="stylesheet" crossorigin href="./assets/intonation-Cq7kfoBq.css">
   </head>
   <body>
@@ -54,16 +54,20 @@
 
       <!-- Istruzioni del livello e Lezione del Maestro: stesse schede -->
       <section id="iCards" class="screen" hidden>
+        <!-- Stesso schema della Guida del Core (regola di Sandro, 23 nov.): comandi e pallini in alto, poi la scheda -->
         <header class="top">
-          <span id="iCardCount" class="mode"></span>
+          <span id="iCardCount" class="steps"></span>
           <button id="iCardsClose" class="icon" aria-label="Chiudi">✕</button>
         </header>
-        <h2 id="iCardTitle" class="serif-title"></h2>
-        <div id="iCardText" class="card-text"></div>
-        <div class="play-row"><button id="iCardPlay" class="play" hidden>▶ <span>Ascolta</span></button></div>
-        <div class="row-btns">
+        <div class="row-btns intro-nav">
           <button id="iCardPrev">← Indietro</button>
+          <span id="iCardDots" class="intro-dots" aria-hidden="true"></span>
           <button id="iCardNext" class="primary">Avanti →</button>
+        </div>
+        <div class="intro-card">
+          <h2 id="iCardTitle"></h2>
+          <div id="iCardText" class="intro-text"></div>
+          <div class="play-row"><button id="iCardPlay" class="play" hidden>▶ <span>Ascolta</span></button></div>
         </div>
         <button id="iCardSkip" class="link-btn" hidden>Salta la lezione →</button>
       </section>
