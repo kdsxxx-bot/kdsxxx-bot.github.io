@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14161c" media="(prefers-color-scheme: dark)" />
+    <link rel="apple-touch-icon" href="icon-180.png" />
+    <title>Theremin a mani · prova</title>
+    <script type="module" crossorigin src="./assets/theremin-hDg2sUdD.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/theme-B0y3MG38.js">
+    <link rel="stylesheet" crossorigin href="./assets/theme-DstIB5jK.css">
+    <link rel="stylesheet" crossorigin href="./assets/theremin-Pzsm-Da2.css">
+  </head>
+  <body>
+    <main id="app" class="tm">
+      <!-- Pagina di prova (Sandro, 23 nov. sera): theremin con le mani davanti alla fotocamera frontale. -->
+      <section id="tStart" class="screen">
+        <header class="top">
+          <span class="steps">Prova · Theremin a mani</span>
+          <button class="icon" data-close aria-label="Chiudi">✕</button>
+        </header>
+        <div class="intro-card">
+          <h2>Suona con le mani</h2>
+          <div class="intro-text">
+            <p>Appoggia l'iPhone in verticale davanti a te, a un braccio di distanza, con la fotocamera frontale verso di te.</p>
+            <p>La <strong>mano destra</strong> dà l'altezza: più in alto, più acuto. La <strong>mano sinistra</strong> dà il volume: aperta suona, chiusa a <strong>pugno</strong> tace.</p>
+            <p>Sul <strong>bordone</strong> senti una nota: trovala con la mano e resta fermo un secondo e mezzo. Poi il giudizio.</p>
+            <p>Il video resta sul telefono: non si salva e non esce.</p>
+          </div>
+        </div>
+        <div class="home-bottom">
+          <button id="tGo" class="primary ascend">Accendi la fotocamera</button>
+          <p id="tStartMsg" class="tm-msg"></p>
+        </div>
+      </section>
+
+      <section id="tPlay" class="screen" hidden>
+        <header class="top">
+          <span id="tTitle" class="steps">Theremin a mani</span>
+          <button class="icon" data-close aria-label="Chiudi">✕</button>
+        </header>
+        <div class="seg tm-seg" id="tMode"><button data-v="find" aria-pressed="true">Trova la nota</button><button data-v="free" aria-pressed="false">Suona libero</button></div>
+        <p id="tPrompt" class="tm-prompt"></p>
+        <div class="tm-stage">
+          <video id="tVideo" playsinline muted autoplay></video>
+          <canvas id="tCanvas"></canvas>
+          <p id="tHands" class="tm-hands"></p>
+        </div>
+        <p id="tVerdict" class="tm-verdict"></p>
+        <div class="row-btns tm-btns">
+          <button id="tAgain">▶ Riascolta</button>
+          <button id="tNext" class="primary">Nuova nota →</button>
+        </div>
+        <p id="tDiag" class="tm-diag"></p>
+      </section>
+    </main>
+  </body>
+</html>
