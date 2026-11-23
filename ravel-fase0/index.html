@@ -13,11 +13,11 @@
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster · Harmony &amp; Ear</title>
     <meta name="description" content="Parnassum M∂ster (Master) · Harmony &amp; Ear: l’orecchio relativo, dai gradi nella tonalità fino all’armonia." />
-    <script type="module" crossorigin src="./assets/main-Cgsw86Ig.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/meter-YWqZRc8f.js">
-    <link rel="modulepreload" crossorigin href="./assets/pitch-D4bUsGi2.js">
-    <link rel="modulepreload" crossorigin href="./assets/sheet-CkgQi8lQ.js">
-    <link rel="stylesheet" crossorigin href="./assets/meter-5OJDCRzh.css">
+    <script type="module" crossorigin src="./assets/main-9nXaJa6F.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-DkpRAqMU.js">
+    <link rel="modulepreload" crossorigin href="./assets/pitch-xqRHgNdj.js">
+    <link rel="modulepreload" crossorigin href="./assets/sheet-Bz7JgDGW.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-D4-rPLUs.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -114,6 +114,8 @@
         <button id="tapPad" class="pad" aria-label="Tocca a tempo"></button>
         <p id="calibMsg" class="msg"></p>
         <p id="calibCheck" class="msg"></p>
+        <div class="opt calib-hp"><span>Cuffie</span>
+          <div class="seg" data-for="headphonesOn"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
         <div class="row-btns">
           <button id="calibStart" class="primary">Avvia</button>
           <button id="calibSkip">Salta</button>
@@ -148,6 +150,7 @@
         </div>
         <p id="singHint" class="hint" hidden>Canta l’ultima nota, in qualsiasi ottava</p>
         <button id="playInvite" class="invite" hidden>Non vuoi cantare? Glissa con il dito</button>
+        <div class="seg answer-seg" data-for="answerMode" aria-label="Modo di risposta"><button data-v="tap">Tocca</button><button data-v="sing">Canta</button><button data-v="glide">Glissa</button></div>
         <div class="row-btns">
           <button id="again">Riascolta</button>
           <button id="next" class="primary" hidden>Avanti</button>
@@ -173,6 +176,7 @@
           <button id="lessonDrone" class="small drone on" aria-label="Bordone">Bordone</button>
         </div>
         <button id="lessonInvite" class="invite" hidden>Non vuoi cantare? Glissa con il dito</button>
+        <div class="seg answer-seg" data-for="answerMode" aria-label="Modo di risposta"><button data-v="tap">Tocca</button><button data-v="sing">Canta</button><button data-v="glide">Glissa</button></div>
         <div class="row-btns">
           <button id="lessonPrev" hidden>← Indietro</button>
           <button id="lessonSkip" hidden>Salta il canto →</button>
@@ -195,6 +199,7 @@
           <button id="lxDrone" class="small drone" aria-label="Bordone spento">Bordone</button>
         </div>
         <button id="lxInvite" class="invite" hidden>Non vuoi cantare? Glissa con il dito</button>
+        <div class="seg answer-seg" data-for="answerMode" aria-label="Modo di risposta"><button data-v="tap">Tocca</button><button data-v="sing">Canta</button><button data-v="glide">Glissa</button></div>
         <div class="row-btns">
           <button id="lxPrev" hidden>← Indietro</button>
           <button id="lxSkip" hidden>Salta la lezione →</button>
@@ -239,6 +244,12 @@
           <div class="opt" data-scope="gradus"><span>Velocità: <b id="speedValue">moderata</b></span>
             <input id="speedRange" type="range" min="0.5" max="1.3" step="0.05" value="0.8" aria-label="Velocità" /></div>
           <!-- Impostazioni generali -->
+          <div class="opt" data-scope="general"><span>Tema</span>
+            <div class="seg" data-for="themeSelect"><button data-v="auto">Automatico</button><button data-v="light">Chiaro</button><button data-v="dark">Scuro</button></div>
+            <small>Automatico segue il telefono.</small></div>
+          <div class="opt" data-scope="general"><span>Taratura</span>
+            <button class="item" id="recalib">Ritara il dispositivo</button>
+            <small>Da rifare quando cambi uscita audio: altoparlante, cuffie a filo o Bluetooth. Se colleghi o scolleghi le cuffie, l'app te lo propone da sola.</small></div>
           <button class="item" id="audioRebuild" data-scope="general">Non senti l’audio? Tocca qui per riattivarlo</button>
           <div class="opt" data-scope="general"><span>Cuffie</span>
             <div class="seg" data-for="headphonesOn"><button data-v="1">Sì</button><button data-v="0">No</button></div>
@@ -248,7 +259,6 @@
           <details class="adv" data-scope="general"><summary>Per il collaudo</summary>
             <div class="opt"><span>Filtri del telefono (eco, rumore, guadagno)</span>
               <div class="seg" data-for="micFilters"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
-            <button class="item" id="recalib">Ripeti la taratura</button>
             <button class="item" id="copyReport">Copia rapporto</button>
             <textarea id="reportBox" readonly hidden></textarea>
           </details>
@@ -258,10 +268,15 @@
             <select id="labelMode"><option value="syl" selected>do re mi</option><option value="notes">Note reali</option><option value="none">Nessuno</option></select>
             <select id="keyChange"><option value="auto" selected>Automatico</option><option value="1">1</option><option value="3">3</option><option value="5">5</option><option value="never">Mai</option></select>
             <select id="answerMode"><option value="tap">Tocca</option><option value="sing">Canta</option><option value="glide">Glissa</option></select>
-            <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" /><input id="returnAlways" type="checkbox" />
+            <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" />
+            <select id="themeSelect"><option value="auto">Automatico</option><option value="light">Chiaro</option><option value="dark">Scuro</option></select><input id="returnAlways" type="checkbox" />
           </div>
         </div>
       </dialog>
+      <div id="outputToast" class="toast" role="status" hidden>
+        <p>L'uscita audio è cambiata (cuffie collegate o scollegate?).</p>
+        <div class="row-btns"><button id="toastRecalib" class="primary">Ritara</button><button id="toastLater">Più tardi</button></div>
+      </div>
     </main>
   </body>
 </html>
