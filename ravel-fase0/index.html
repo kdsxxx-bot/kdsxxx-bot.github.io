@@ -6,21 +6,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="RAVEL prova" />
+    <meta name="apple-mobile-web-app-title" content="Parnassum M∂ster" />
     <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#16161a" media="(prefers-color-scheme: dark)" />
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="apple-touch-icon" href="icon-180.png" />
-    <title>RAVEL · Fase 0</title>
-    <script type="module" crossorigin src="./assets/main-CqPdfvHf.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/meter-CNouC23l.js">
-    <link rel="modulepreload" crossorigin href="./assets/pitch-CtT93OWb.js">
-    <link rel="modulepreload" crossorigin href="./assets/sheet-D8TWAVBi.js">
-    <link rel="stylesheet" crossorigin href="./assets/meter-BSRHIhDc.css">
+    <title>Parnassum M∂ster · Harmony &amp; Ear</title>
+    <meta name="description" content="Parnassum M∂ster (Master) · Harmony &amp; Ear: l’orecchio relativo, dai gradi nella tonalità fino all’armonia." />
+    <script type="module" crossorigin src="./assets/main-BVSUVUdc.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-CwOO4BiH.js">
+    <link rel="modulepreload" crossorigin href="./assets/pitch-DhB2Qp1G.js">
+    <link rel="modulepreload" crossorigin href="./assets/sheet-ShiqEMHm.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-n6H8HAe6.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
     <main id="app">
+      <!-- Menu unico (Q88, punto 9): stesso pallino, stesso posto, su home, esercitazione, lezioni, esame -->
+      <button id="menuDot" class="menu-dot" aria-label="Menu" aria-haspopup="dialog"><span aria-hidden="true"></span></button>
       <section id="intro" class="screen" hidden>
         <header class="top">
           <span id="introCount" class="steps"></span>
@@ -55,8 +58,7 @@
 
       <section id="home" class="screen">
         <header class="top home-top">
-          <span class="brand">RAVEL <span>M∂ster</span></span>
-          <button id="homeMenuBtn" class="icon" aria-label="Menu">☰</button>
+          <span class="brand">Parnassum <span>M∂ster</span><small class="brand-sub">Harmony &amp; Ear</small></span>
         </header>
         <div id="homeSpiral" class="home-host"></div>
         <div class="home-bottom">
@@ -70,15 +72,11 @@
         <div id="planBody" class="plan-body"></div>
       </section>
 
-      <dialog id="homeMenu" class="sheet" aria-label="Menu">
+      <dialog id="menu" class="sheet" aria-label="Menu">
         <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
-        <button class="item" id="homeQuick">Guida rapida</button>
-        <button class="item" id="homeIntro">Guida completa</button>
-        <button class="item" id="homeMethod">Il metodo nel dettaglio</button>
-        <button class="item" id="openPlan">Piano di studi</button>
-        <button class="item" id="homeSettings">Impostazioni</button>
+        <div id="menuBody" class="sheet-scroll menu-body"></div>
         <p id="buildLabel" class="sheet-note"></p>
-        <button class="btn-close" id="homeMenuX">Chiudi</button>
+        <button class="btn-close" id="menuX">Chiudi</button>
       </dialog>
 
       <dialog id="examSheet" class="sheet" aria-labelledby="examTitle">
@@ -93,7 +91,8 @@
       </dialog>
 
       <section id="start" class="screen" hidden>
-        <h1>RAVEL <span>M∂ster</span></h1>
+        <h1>Parnassum <span>M∂ster</span></h1>
+        <p class="brand-sub">Harmony &amp; Ear</p>
         <p class="sub">Primo accesso: due domande, poi la taratura (una volta sola su questo dispositivo)</p>
         <div class="ask">
           <p>Hai le cuffie?</p>
@@ -128,7 +127,6 @@
           <span class="top-btns">
             <button id="playHome" class="icon" aria-label="Torna alla spirale">⌂</button>
             <button id="openLesson" class="small">Lezione</button>
-            <button id="openSettings" class="icon" aria-label="Impostazioni">⋯</button>
           </span>
         </header>
         <div id="groupRow" class="group-row" role="group" aria-label="Lezioni del Gradus I"></div>
@@ -149,6 +147,7 @@
           <button id="droneToggle" class="small drone on" aria-pressed="true" aria-label="Bordone acceso">Bordone</button>
         </div>
         <p id="singHint" class="hint" hidden>Canta l’ultima nota, in qualsiasi ottava</p>
+        <button id="playInvite" class="invite" hidden>Non vuoi cantare? Glissa con il dito</button>
         <div class="row-btns">
           <button id="again">Riascolta</button>
           <button id="next" class="primary" hidden>Avanti</button>
@@ -173,6 +172,7 @@
           <button id="lessonSing" class="sing" hidden>Tieni premuto e canta</button>
           <button id="lessonDrone" class="small drone on" aria-label="Bordone">Bordone</button>
         </div>
+        <button id="lessonInvite" class="invite" hidden>Non vuoi cantare? Glissa con il dito</button>
         <div class="row-btns">
           <button id="lessonPrev" hidden>← Indietro</button>
           <button id="lessonSkip" hidden>Salta il canto →</button>
@@ -194,6 +194,7 @@
           <button id="lxPlay" class="play play-word" aria-label="Ascolta">▶ Ascolta</button>
           <button id="lxDrone" class="small drone" aria-label="Bordone spento">Bordone</button>
         </div>
+        <button id="lxInvite" class="invite" hidden>Non vuoi cantare? Glissa con il dito</button>
         <div class="row-btns">
           <button id="lxPrev" hidden>← Indietro</button>
           <button id="lxSkip" hidden>Salta la lezione →</button>
@@ -217,40 +218,46 @@
         <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
         <div class="sheet-head"><h2 id="settingsTitle">Impostazioni</h2><button id="closeX" class="icon" aria-label="Chiudi">✕</button></div>
         <div class="sheet-scroll">
-          <button class="item" id="audioRebuild">Non senti l’audio? Tocca qui per riattivarlo</button>
-          <div class="opt"><span>Vista dei gradi</span>
+          <!-- Impostazioni del Gradus (Q88, punto 9) -->
+          <div class="opt" data-scope="gradus"><span>Modo di risposta</span>
+            <div class="seg" data-for="answerMode"><button data-v="tap">Tocca</button><button data-v="sing">Canta</button><button data-v="glide">Glissa</button></div>
+            <small>Glissa: tieni premuto e muovi il dito, su più acuto, giù più grave. Quando lo alzi, vale la nota dove sei.</small></div>
+          <div class="opt" data-scope="gradus"><span>Vista dei gradi</span>
             <div class="seg" data-for="viewSelect"><button data-v="spiral">Spirale</button><button data-v="rows">Righe</button></div></div>
-          <div class="opt"><span>Nomi accanto ai gradi</span>
+          <div class="opt" data-scope="gradus"><span>Nomi accanto ai gradi</span>
             <div class="seg" data-for="labelMode"><button data-v="syl">do re mi</button><button data-v="notes">Note reali</button><button data-v="none">Nessuno</button></div></div>
-          <div class="opt"><span>Cuffie</span>
-            <div class="seg" data-for="headphonesOn"><button data-v="1">Sì</button><button data-v="0">No</button></div>
-            <small>Con le cuffie il bordone resta acceso mentre canti.</small></div>
-          <div class="opt"><span>Microfono</span>
-            <div class="seg" data-for="micOn"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
-          <div class="opt"><span>Tonalità</span>
+          <div class="opt" data-scope="gradus"><span>Tonalità</span>
             <select id="keySelect"><option value="">Casuale</option></select></div>
-          <div class="opt"><span>Cambio di tonalità</span>
+          <div class="opt" data-scope="gradus"><span>Cambio di tonalità</span>
             <div class="seg" data-for="keyChange"><button data-v="auto">Automatico</button><button data-v="1">Dopo 1 domanda</button><button data-v="3">Dopo 3</button><button data-v="5">Dopo 5</button><button data-v="never">Mai</button></div>
             <small>Automatico: la tonalità resta ferma all'inizio e cambia sempre più spesso man mano che riconosci i gradi.</small></div>
-          <div class="opt"><span>Ritorno alla tonica sempre</span>
+          <div class="opt" data-scope="gradus"><span>Ritorno alla tonica sempre</span>
             <div class="seg" data-for="returnAlways"><button data-v="1">Sì</button><button data-v="0">No</button></div>
             <small>Negli ultimi gradini prima dell'esame e all'esame il ritorno suona solo dopo un errore. Con «Sì» suona sempre.</small></div>
-          <div class="opt"><span>Bordone</span>
+          <div class="opt" data-scope="gradus"><span>Bordone</span>
             <input id="droneLevel" type="range" min="0" max="0.6" step="0.05" value="0.25" aria-label="Volume del bordone" /></div>
-          <div class="opt"><span>Velocità: <b id="speedValue">moderata</b></span>
+          <div class="opt" data-scope="gradus"><span>Velocità: <b id="speedValue">moderata</b></span>
             <input id="speedRange" type="range" min="0.5" max="1.3" step="0.05" value="0.8" aria-label="Velocità" /></div>
-          <details class="adv"><summary>Per il collaudo</summary>
+          <!-- Impostazioni generali -->
+          <button class="item" id="audioRebuild" data-scope="general">Non senti l’audio? Tocca qui per riattivarlo</button>
+          <div class="opt" data-scope="general"><span>Cuffie</span>
+            <div class="seg" data-for="headphonesOn"><button data-v="1">Sì</button><button data-v="0">No</button></div>
+            <small>Con le cuffie il bordone resta acceso mentre canti.</small></div>
+          <div class="opt" data-scope="general"><span>Microfono</span>
+            <div class="seg" data-for="micOn"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
+          <details class="adv" data-scope="general"><summary>Per il collaudo</summary>
             <div class="opt"><span>Filtri del telefono (eco, rumore, guadagno)</span>
               <div class="seg" data-for="micFilters"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
             <button class="item" id="recalib">Ripeti la taratura</button>
             <button class="item" id="copyReport">Copia rapporto</button>
             <textarea id="reportBox" readonly hidden></textarea>
           </details>
-          <p class="credits">Pianoforte: Salamander Grand Piano, Alexander Holm (CC BY 3.0). Riconoscimento dell'altezza: pitchy (MIT).</p>
+          <p class="credits" data-scope="general">Pianoforte: Salamander Grand Piano, Alexander Holm (CC BY 3.0). Riconoscimento dell'altezza: pitchy (MIT).</p>
           <div hidden>
             <select id="viewSelect"><option value="spiral" selected>Spirale</option><option value="rows">Righe</option></select>
             <select id="labelMode"><option value="syl" selected>do re mi</option><option value="notes">Note reali</option><option value="none">Nessuno</option></select>
             <select id="keyChange"><option value="auto" selected>Automatico</option><option value="1">1</option><option value="3">3</option><option value="5">5</option><option value="never">Mai</option></select>
+            <select id="answerMode"><option value="tap">Tocca</option><option value="sing">Canta</option><option value="glide">Glissa</option></select>
             <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" /><input id="returnAlways" type="checkbox" />
           </div>
         </div>

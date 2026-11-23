@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Intonation · RAVEL M∂ster</title>
-    <script type="module" crossorigin src="./assets/intonation-GDRH_qRE.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/meter-CNouC23l.js">
-    <link rel="modulepreload" crossorigin href="./assets/sheet-D8TWAVBi.js">
-    <link rel="stylesheet" crossorigin href="./assets/meter-BSRHIhDc.css">
-    <link rel="stylesheet" crossorigin href="./assets/intonation-C2XRhudd.css">
+    <title>Parnassum M∂ster Intonation</title>
+    <script type="module" crossorigin src="./assets/intonation-C5a4FtRC.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/meter-CwOO4BiH.js">
+    <link rel="modulepreload" crossorigin href="./assets/sheet-ShiqEMHm.js">
+    <link rel="stylesheet" crossorigin href="./assets/meter-n6H8HAe6.css">
+    <link rel="stylesheet" crossorigin href="./assets/intonation-Cq7kfoBq.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -17,7 +17,7 @@
       <!-- Home della materia -->
       <section id="iHome" class="screen">
         <header class="top home-top">
-          <span class="brand">Intonation</span>
+          <span id="iBrand" class="brand">Parnassum M∂ster Intonation</span>
           <button id="iMenuBtn" class="icon" aria-label="Menu">☰</button>
         </header>
         <p class="into-sub">Sentire se una nota è giusta, calante o crescente.</p>
@@ -92,6 +92,9 @@
           <input id="iKnobRange" type="range" min="-60" max="60" step="0.5" value="0" aria-label="Manopola d'accordatura" />
           <div class="row-btns"><button id="iKnobDone" class="primary">Fatto</button></div>
         </div>
+        <!-- Modi a dito per Riprodurre: glissato, theremin, monocordo (scelti nelle impostazioni) -->
+        <div id="iPadHost" class="ipad-host" hidden></div>
+        <button id="iGlideInvite" class="link-btn" hidden>Non vuoi cantare? Glissa con il dito</button>
         <div id="iSing" hidden>
           <button id="iSingHold" class="hold">Tieni premuto e canta</button>
         </div>
@@ -139,6 +142,8 @@
             <div class="seg" id="iSegListen"><button data-v="headphones">Cuffie</button><button data-v="speakers">Casse</button><button data-v="phone">Telefono</button></div></div>
           <div class="opt"><span>Microfono (per cantare)</span>
             <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
+          <div class="opt"><span>Riprodurre con</span>
+            <div class="seg seg4" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
           <div class="opt"><span>Barra dell'intonazione nel livello 3</span>
             <div class="seg" id="iSegMeter3"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
           <details class="adv"><summary>Per il collaudo</summary>
