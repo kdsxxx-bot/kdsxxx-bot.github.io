@@ -10,15 +10,15 @@
     <meta name="theme-color" content="#1d2230" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster Intonation</title>
-    <script type="module" crossorigin src="./assets/intonation-BeaYR7fe.js"></script>
+    <script type="module" crossorigin src="./assets/intonation-B4ZtL4VL.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
     <link rel="modulepreload" crossorigin href="./assets/tessere-DCb9m6Ef.js">
-    <link rel="modulepreload" crossorigin href="./assets/audio-DYWQwVQm.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-hQJnt2eG.js">
+    <link rel="modulepreload" crossorigin href="./assets/audio-wdEqIR_L.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-BIew85Bz.js">
     <link rel="modulepreload" crossorigin href="./assets/theme-DKXJrPrO.js">
-    <link rel="modulepreload" crossorigin href="./assets/meter-CI-PC8Wu.js">
+    <link rel="modulepreload" crossorigin href="./assets/meter-D3sZDsFf.js">
     <link rel="stylesheet" crossorigin href="./assets/theme-DgKhn_vS.css">
-    <link rel="stylesheet" crossorigin href="./assets/intonation-hssOiHwL.css">
+    <link rel="stylesheet" crossorigin href="./assets/intonation-Bd4yoZg8.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -91,6 +91,7 @@
           <div class="play-row"><button id="iCardPlay" class="play play-word" hidden>▶ <span>Ascolta</span></button></div>
         </div>
         <button id="iCardSkip" class="invite" hidden>Salta la lezione →</button>
+        <label id="iCardOffWrap" class="check intro-skip" hidden><input id="iCardOff" type="checkbox" /> Non mostrare più all'avvio</label>
       </section>
 
       <!-- Esercizio -->
@@ -165,6 +166,8 @@
           <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
         <div class="opt"><span>Accorda con</span>
           <div class="seg seg4" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
+        <div class="opt"><span>Cadenza</span>
+          <div class="seg" id="iSegCadence"><button data-v="always">Sempre</button><button data-v="change">Al cambio di tonalità</button></div></div>
         <div class="opt" hidden><span>Barra dell'intonazione nel livello 3</span>
           <div class="seg" id="iSegMeter3"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
         <div class="opt"><span>Contatti</span>
