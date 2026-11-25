@@ -10,25 +10,24 @@
     <meta name="theme-color" content="#1d2230" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster Intonation</title>
-    <script type="module" crossorigin src="./assets/intonation-Cuq0d_sq.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/tessere-DTfRrM-i.js">
-    <link rel="modulepreload" crossorigin href="./assets/theme-B5i9S95r.js">
-    <link rel="modulepreload" crossorigin href="./assets/meter-ClHQQnC1.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-BjxhF3Ua.js">
-    <link rel="stylesheet" crossorigin href="./assets/theme-D_tPMjJt.css">
-    <link rel="stylesheet" crossorigin href="./assets/intonation-Cbwk-IJH.css">
+    <script type="module" crossorigin src="./assets/intonation-CMNDEMnz.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
+    <link rel="modulepreload" crossorigin href="./assets/theme-CCAhhkCg.js">
+    <link rel="modulepreload" crossorigin href="./assets/tessere-2oxYecDq.js">
+    <link rel="modulepreload" crossorigin href="./assets/audio-DneAriko.js">
+    <link rel="modulepreload" crossorigin href="./assets/meter-DWpTFETK.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-DnZBu1m0.js">
+    <link rel="stylesheet" crossorigin href="./assets/theme-B_W0_4hG.css">
+    <link rel="stylesheet" crossorigin href="./assets/intonation-TCFLT80w.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
     <main id="app" class="into">
-      <!-- Menu come nel Core (Sandro, 23 nov.): un pallino in alto a destra, stesso posto su home, esercizio e fine -->
-      <button id="iMenuDot" class="menu-dot" aria-label="Menu" aria-haspopup="dialog"><span aria-hidden="true"></span></button>
+      <!-- Intestazione (‹ con mini-spirale, titolo, pallino), menu e foglio delle impostazioni vengono dal telaio comune
+           (src/platform/frame.ts, questione 101): qui solo i contenuti di Intonation. -->
 
       <!-- Home della materia -->
       <section id="iHome" class="screen">
-        <header class="top home-top">
-          <span id="iBrand" class="brand">Parnassum M∂ster Intonation</span>
-        </header>
         <!-- Identità «Ad Parnassum» (Sandro, 24 nov., tavola D): nome in maiuscolo romano, sottotitolo, spirale a tessere azzurre col sole -->
         <div class="into-hero">
           <h1 class="into-title">Intonation</h1>
@@ -96,10 +95,6 @@
 
       <!-- Esercizio -->
       <section id="iEx" class="screen" hidden>
-        <header class="top">
-          <span id="iExTitle" class="ex-title"></span>
-          <span class="top-btns"><button id="iExHome" class="icon" aria-label="Torna a Intonation">⌂</button></span>
-        </header>
         <!-- Tipo di prova, sempre in vista (Sandro, 23 nov.): si cambia in qualunque momento, senza penalità -->
         <div id="iModeSeg" class="seg mode-seg" role="group" aria-label="Tipo di prova">
           <button data-v="perceive">Percepire</button><button data-v="reproduce">Riprodurre</button><button data-v="anticipate">Anticipare</button>
@@ -119,10 +114,10 @@
           <div class="row-btns"><button id="iKnobDone" class="primary">Fatto</button></div>
         </div>
         <!-- Modi a dito per Riprodurre: glissato, theremin, monocordo -->
-        <div id="iPadHost" class="ipad-host" hidden></div>
+        <div id="iPadHost" class="ipad-host" data-noswipe hidden></div>
         <button id="iGlideInvite" class="invite" hidden>Non vuoi cantare? Glissa con il dito</button>
         <div id="iSing" hidden>
-          <button id="iSingHold" class="hold sing">Tieni premuto e canta</button>
+          <button id="iSingHold" class="hold sing" data-noswipe>Tieni premuto e canta</button>
         </div>
         <!-- Riprodurre: come rispondi, come Tocca · Canta · Glissa nel Core; uguale all'impostazione -->
         <div id="iProduceSeg" class="seg answer-seg produce-seg" aria-label="Riprodurre con" hidden><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div>
@@ -162,47 +157,23 @@
         </div>
       </section>
 
-      <dialog id="iMenu" class="sheet" aria-label="Menu">
-        <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
-        <div class="sheet-scroll menu-body">
-          <button class="item menu-item" id="iMenuCore" data-icon="plan"><span>Torna alla spirale</span></button>
-          <button class="item menu-item" id="iMenuIntro" data-icon="book"><span>Istruzioni</span></button>
-          <button class="item menu-item" id="iMenuMethod" data-icon="method"><span>Il metodo nel dettaglio</span></button>
-          <button class="item menu-item" id="iMenuSettings" data-icon="gear"><span>Impostazioni</span></button>
-          <a class="item menu-item" id="iMenuHands" data-icon="sliders" href="theremin.html"><span>Prova: theremin a mani</span></a>
-          <button class="item menu-item" id="iMenuAudio" data-icon="sliders"><span>Non senti l’audio? Riattivalo</span></button>
-        </div>
-        <p id="iBuild" class="sheet-note"></p>
-        <button class="btn-close" id="iMenuX">Chiudi</button>
-      </dialog>
-
-      <dialog id="iSettings" class="sheet" aria-labelledby="iSetTitle">
-        <div class="grip" aria-hidden="true" tabindex="-1" autofocus></div>
-        <div class="sheet-head"><h2 id="iSetTitle">Impostazioni</h2><button id="iSetX" class="icon" aria-label="Chiudi">✕</button></div>
-        <div class="sheet-scroll">
-          <div class="opt"><span>Ascolto</span>
-            <div class="seg" id="iSegListen"><button data-v="headphones">Cuffie</button><button data-v="speakers">Casse</button><button data-v="phone">Telefono</button></div></div>
-          <div class="opt"><span>Microfono (per cantare)</span>
-            <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
-          <div class="opt"><span>Riprodurre con</span>
-            <div class="seg seg4" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
-          <div class="opt"><span>Barra dell'intonazione nel livello 3</span>
-            <div class="seg" id="iSegMeter3"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
-          <div class="opt"><span>Tema</span>
-            <div class="seg" id="iSegTheme"><button data-v="auto">Automatico</button><button data-v="light">Chiaro</button><button data-v="dark">Scuro</button></div>
-            <small>Automatico segue il telefono.</small></div>
-          <div class="opt"><span>I miei dati</span>
-            <button class="item" id="iDataExport">Esporta i miei dati</button>
-            <button class="item" id="iDataClear">Cancella i miei dati</button>
-            <small>Le risposte restano solo su questo telefono: niente nome, niente audio.</small></div>
-          <details class="adv"><summary>Per il collaudo</summary>
-            <button class="item" id="iRecalib">Ripeti la taratura</button>
-            <button class="item" id="iReset">Ricomincia Intonation da capo</button>
-            <button class="item" id="iCopy">Copia rapporto</button>
-            <textarea id="iReport" readonly hidden></textarea>
-          </details>
-        </div>
-      </dialog>
+      <!-- Scelte proprie di Intonation: il telaio le mette nel foglio comune delle impostazioni. -->
+      <div id="iSetBody" hidden>
+        <div class="opt"><span>Ascolto</span>
+          <div class="seg" id="iSegListen"><button data-v="headphones">Cuffie</button><button data-v="speakers">Casse</button><button data-v="phone">Telefono</button></div></div>
+        <div class="opt"><span>Microfono (per cantare)</span>
+          <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
+        <div class="opt"><span>Riprodurre con</span>
+          <div class="seg seg4" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
+        <div class="opt"><span>Barra dell'intonazione nel livello 3</span>
+          <div class="seg" id="iSegMeter3"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
+        <details class="adv"><summary>Per il collaudo</summary>
+          <button class="item" id="iRecalib">Ripeti la taratura</button>
+          <button class="item" id="iReset">Ricomincia Intonation da capo</button>
+          <button class="item" id="iCopy">Copia rapporto</button>
+          <textarea id="iReport" readonly hidden></textarea>
+        </details>
+      </div>
     </main>
   </body>
 </html>
