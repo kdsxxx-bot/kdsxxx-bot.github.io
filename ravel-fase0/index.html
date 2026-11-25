@@ -13,16 +13,16 @@
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster · Harmony &amp; Ear</title>
     <meta name="description" content="Parnassum M∂ster (Master) · Harmony &amp; Ear: l’orecchio relativo, dai gradi nella tonalità fino all’armonia." />
-    <script type="module" crossorigin src="./assets/main-DeR-oqnp.js"></script>
+    <script type="module" crossorigin src="./assets/main-fOnaQv05.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
-    <link rel="modulepreload" crossorigin href="./assets/theme-CySpWPJM.js">
-    <link rel="modulepreload" crossorigin href="./assets/tessere-2oxYecDq.js">
-    <link rel="modulepreload" crossorigin href="./assets/audio-DneAriko.js">
-    <link rel="modulepreload" crossorigin href="./assets/meter-DWpTFETK.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-DnZBu1m0.js">
-    <link rel="modulepreload" crossorigin href="./assets/pitch-DHkArViB.js">
-    <link rel="modulepreload" crossorigin href="./assets/home-B4s51wfO.js">
-    <link rel="stylesheet" crossorigin href="./assets/theme-DUjVqb1S.css">
+    <link rel="modulepreload" crossorigin href="./assets/tessere-DCb9m6Ef.js">
+    <link rel="modulepreload" crossorigin href="./assets/audio-DDNtwP6N.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-Cmv9qzp1.js">
+    <link rel="modulepreload" crossorigin href="./assets/theme-G5QzNWpy.js">
+    <link rel="modulepreload" crossorigin href="./assets/meter-t-Azykav.js">
+    <link rel="modulepreload" crossorigin href="./assets/pitch-BtzIburt.js">
+    <link rel="modulepreload" crossorigin href="./assets/home-DA_Pl2DX.js">
+    <link rel="stylesheet" crossorigin href="./assets/theme-BxBaLpOM.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -67,6 +67,7 @@
         </header>
         <div id="homeSpiral" class="home-host"></div>
         <div class="home-bottom">
+          <p id="hereLine" class="here-line"></p>
           <button id="ascend" class="primary ascend">Ascendi</button>
           <p id="nextStep" class="next-step"></p>
         </div>
@@ -252,6 +253,9 @@
           <div class="opt" data-scope="general"><span>Tema</span>
             <div class="seg" data-for="themeSelect"><button data-v="auto">Automatico</button><button data-v="light">Chiaro</button><button data-v="dark">Scuro</button></div>
             <small>Automatico segue il telefono.</small></div>
+          <div class="opt" data-scope="general"><span>Pillole del Maestro</span>
+            <div class="seg" data-for="pillsOn"><button data-v="1">Sì</button><button data-v="0">No</button></div>
+            <small>Una frase breve alla fine della sessione, su come impara l'orecchio.</small></div>
           <div class="opt" data-scope="general"><span>Taratura</span>
             <button class="item" id="recalib">Ritara il dispositivo</button>
             <small>Da rifare quando cambi uscita audio: altoparlante, cuffie a filo o Bluetooth. Se colleghi o scolleghi le cuffie, l'app te lo propone da sola.</small></div>
@@ -271,13 +275,15 @@
             <button class="item" id="dataExport">Esporta i miei dati</button>
             <button class="item" id="dataClear">Cancella i miei dati</button>
             <small>Le risposte restano solo su questo telefono: niente nome, niente audio.</small></div>
+          <div class="opt" data-scope="general"><span>Contatti</span>
+            <div data-contacts></div></div>
           <p class="credits" data-scope="general">Pianoforte: Salamander Grand Piano, Alexander Holm (CC BY 3.0). Riconoscimento dell'altezza: pitchy (MIT).</p>
           <div hidden>
             <select id="viewSelect"><option value="spiral" selected>Spirale</option><option value="rows">Righe</option></select>
             <select id="labelMode"><option value="syl" selected>do re mi</option><option value="notes">Note reali</option><option value="none">Nessuno</option></select>
             <select id="keyChange"><option value="auto" selected>Automatico</option><option value="1">1</option><option value="3">3</option><option value="5">5</option><option value="never">Mai</option></select>
             <select id="answerMode"><option value="tap">Tocca</option><option value="sing">Canta</option><option value="glide">Glissa</option></select>
-            <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" />
+            <input id="headphonesOn" type="checkbox" /><input id="micOn" type="checkbox" /><input id="micFilters" type="checkbox" /><input id="pillsOn" type="checkbox" />
             <select id="themeSelect"><option value="auto">Automatico</option><option value="light">Chiaro</option><option value="dark">Scuro</option></select><input id="returnAlways" type="checkbox" />
           </div>
         </div>

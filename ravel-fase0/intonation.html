@@ -10,14 +10,14 @@
     <meta name="theme-color" content="#1d2230" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster Intonation</title>
-    <script type="module" crossorigin src="./assets/intonation-CV4srQf8.js"></script>
+    <script type="module" crossorigin src="./assets/intonation-C8t27ARh.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
-    <link rel="modulepreload" crossorigin href="./assets/theme-CySpWPJM.js">
-    <link rel="modulepreload" crossorigin href="./assets/tessere-2oxYecDq.js">
-    <link rel="modulepreload" crossorigin href="./assets/audio-DneAriko.js">
-    <link rel="modulepreload" crossorigin href="./assets/meter-DWpTFETK.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-DnZBu1m0.js">
-    <link rel="stylesheet" crossorigin href="./assets/theme-DUjVqb1S.css">
+    <link rel="modulepreload" crossorigin href="./assets/theme-G5QzNWpy.js">
+    <link rel="modulepreload" crossorigin href="./assets/tessere-DCb9m6Ef.js">
+    <link rel="modulepreload" crossorigin href="./assets/audio-DDNtwP6N.js">
+    <link rel="modulepreload" crossorigin href="./assets/meter-t-Azykav.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-Cmv9qzp1.js">
+    <link rel="stylesheet" crossorigin href="./assets/theme-BxBaLpOM.css">
     <link rel="stylesheet" crossorigin href="./assets/intonation-hssOiHwL.css">
   </head>
   <body>
@@ -97,7 +97,7 @@
       <section id="iEx" class="screen" hidden>
         <!-- Tipo di prova, sempre in vista (Sandro, 23 nov.): si cambia in qualunque momento, senza penalità -->
         <div id="iModeSeg" class="seg mode-seg" role="group" aria-label="Tipo di prova">
-          <button data-v="perceive">Percepire</button><button data-v="reproduce">Riprodurre</button><button data-v="anticipate">Anticipare</button>
+          <button data-v="perceive">Percepire</button><button data-v="reproduce">Accorda</button><button data-v="voice">Voce</button><button data-v="anticipate">Anticipare</button>
         </div>
         <div id="iDots" class="ladder-row run-dots" aria-hidden="true"></div>
         <p id="iPrompt" class="into-prompt"></p>
@@ -163,10 +163,12 @@
           <div class="seg" id="iSegListen"><button data-v="headphones">Cuffie</button><button data-v="speakers">Casse</button><button data-v="phone">Telefono</button></div></div>
         <div class="opt"><span>Microfono (per cantare)</span>
           <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
-        <div class="opt"><span>Riprodurre con</span>
+        <div class="opt"><span>Accorda con</span>
           <div class="seg seg4" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
-        <div class="opt"><span>Barra dell'intonazione nel livello 3</span>
+        <div class="opt" hidden><span>Barra dell'intonazione nel livello 3</span>
           <div class="seg" id="iSegMeter3"><button data-v="1">Sì</button><button data-v="0">No</button></div></div>
+        <div class="opt"><span>Contatti</span>
+          <div data-contacts></div></div>
         <details class="adv"><summary>Per il collaudo</summary>
           <button class="item" id="iRecalib">Ripeti la taratura</button>
           <button class="item" id="iReset">Ricomincia Intonation da capo</button>
