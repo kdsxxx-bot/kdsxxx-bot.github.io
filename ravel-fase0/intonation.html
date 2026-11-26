@@ -10,17 +10,18 @@
     <meta name="theme-color" content="#1d2230" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster Intonation</title>
-    <script type="module" crossorigin src="./assets/intonation-VBCyWDzl.js"></script>
+    <script type="module" crossorigin src="./assets/intonation-64mgTAxD.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
     <link rel="modulepreload" crossorigin href="./assets/tessere-DCb9m6Ef.js">
-    <link rel="modulepreload" crossorigin href="./assets/audio-DqsXQRae.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-CQ9W5_JF.js">
-    <link rel="modulepreload" crossorigin href="./assets/theme-DKXJrPrO.js">
-    <link rel="modulepreload" crossorigin href="./assets/meter-MMGbx4D3.js">
-    <link rel="modulepreload" crossorigin href="./assets/theremin-DJaauiUs.js">
-    <link rel="stylesheet" crossorigin href="./assets/theme-DgKhn_vS.css">
-    <link rel="stylesheet" crossorigin href="./assets/theremin-BBJU8Bn2.css">
-    <link rel="stylesheet" crossorigin href="./assets/intonation-pNdtz6VO.css">
+    <link rel="modulepreload" crossorigin href="./assets/audio-BhyB28f4.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-BF-3fC_0.js">
+    <link rel="modulepreload" crossorigin href="./assets/progress-BFHjeU7x.js">
+    <link rel="modulepreload" crossorigin href="./assets/theme-DDw29bbM.js">
+    <link rel="modulepreload" crossorigin href="./assets/meter-B9tEgftC.js">
+    <link rel="modulepreload" crossorigin href="./assets/theremin-D1nVnPMW.js">
+    <link rel="stylesheet" crossorigin href="./assets/theme-CZ1GytAg.css">
+    <link rel="stylesheet" crossorigin href="./assets/theremin-K9lS7bXt.css">
+    <link rel="stylesheet" crossorigin href="./assets/intonation-C9_AYEjZ.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -37,6 +38,8 @@
           <div id="iHeroHost" class="into-spiral"></div>
         </div>
         <ol id="iLevels" class="into-levels"></ol>
+        <!-- Striscia degli strumenti (Sandro, 26 nov., prova «Intonation A»; regola 10 della piattaforma) -->
+        <div id="iTools"></div>
         <div class="home-bottom">
           <button id="iGo" class="primary ascend">Inizia</button>
           <p id="iNext" class="next-step"></p>
@@ -123,7 +126,7 @@
           <button id="iSingHold" class="hold sing" data-noswipe>Tieni premuto e canta</button>
         </div>
         <!-- Riprodurre: come rispondi, come Tocca · Canta · Glissa nel Core; uguale all'impostazione -->
-        <div id="iProduceSeg" class="seg answer-seg produce-seg" aria-label="Riprodurre con" hidden><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Touch theremin</button><button data-v="hands">Theremin</button><button data-v="monochord">Monocordo</button></div>
+        <div id="iProduceSeg" class="seg answer-seg produce-seg" aria-label="Riprodurre con" hidden><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="hands">Theremin</button><button data-v="theremin">Theremin touch</button><button data-v="monochord">Monocordo</button></div>
         <div id="iFeedback" class="feedback" hidden>
           <p id="iVerdict" class="verdict-word"></p>
           <div id="iFbText" class="into-lead"></div>
@@ -167,7 +170,7 @@
         <div class="opt"><span>Microfono (per cantare)</span>
           <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
         <div class="opt"><span>Accorda con</span>
-          <div class="seg seg5" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Touch theremin</button><button data-v="hands">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
+          <div class="seg seg5" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="hands">Theremin</button><button data-v="theremin">Theremin touch</button><button data-v="monochord">Monocordo</button></div></div>
         <div class="opt"><span>Estensione del theremin</span>
           <div class="seg" id="iSegOct"><button data-v="1">1 ottava</button><button data-v="2">2 ottave</button></div></div>
         <div class="opt"><span>Cadenza</span>
