@@ -7,30 +7,33 @@
     <meta name="theme-color" content="#f3ebdd" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1d2230" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
-    <title>Theremin a mani · prova</title>
-    <script type="module" crossorigin src="./assets/theremin-CVO88MCs.js"></script>
+    <title>Theremin a mani · Intonation</title>
+    <script type="module" crossorigin src="./assets/theremin-B2bQC4ft.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
     <link rel="modulepreload" crossorigin href="./assets/theme-DKXJrPrO.js">
+    <link rel="modulepreload" crossorigin href="./assets/theremin-DJaauiUs.js">
     <link rel="modulepreload" crossorigin href="./assets/tessere-DCb9m6Ef.js">
-    <link rel="modulepreload" crossorigin href="./assets/audio-wdEqIR_L.js">
+    <link rel="modulepreload" crossorigin href="./assets/audio-DqsXQRae.js">
     <link rel="stylesheet" crossorigin href="./assets/theme-DgKhn_vS.css">
-    <link rel="stylesheet" crossorigin href="./assets/theremin-D1wcAGG-.css">
+    <link rel="stylesheet" crossorigin href="./assets/theremin-BBJU8Bn2.css">
   </head>
   <body>
     <main id="app" class="tm">
-      <!-- Pagina di prova (Sandro, 23 nov. sera): theremin con le mani davanti alla fotocamera frontale. -->
+      <!-- Theremin a mani, esercizio libero di Intonation (Sandro, 23 nov. sera; fuori dalla prova dal 26 nov.). -->
       <section id="tStart" class="screen">
         <header class="top">
-          <span class="steps">Prova · Theremin a mani</span>
+          <span class="steps">Theremin a mani</span>
           <button class="icon" data-close aria-label="Chiudi">✕</button>
         </header>
         <div class="intro-card">
           <h2>Suona con le mani</h2>
           <div class="intro-text">
             <p>Appoggia l'iPhone in verticale davanti a te, a un braccio di distanza, con la fotocamera frontale verso di te.</p>
-            <p>La <strong>mano destra</strong> dà l'altezza: più in alto, più acuto. La <strong>mano sinistra</strong> dà il volume: più in alto, più forte; chiusa a <strong>pugno</strong> tace. Se sei mancino, nella prova puoi scambiarle.</p>
+            <p>La <strong>mano destra</strong> dà l'altezza: più in alto, più acuto. La <strong>mano sinistra</strong> dà il volume: più in alto, più forte; chiusa a <strong>pugno</strong> tace. Se sei mancino, puoi scambiarle.</p>
             <p>Sul <strong>bordone</strong> senti una nota: trovala con la mano e <strong>resta fermo</strong> un secondo e mezzo: un anello si chiude e la nota vale come risposta. Non serve togliere le mani né fare altri gesti.</p>
             <p>In <strong>Allenamento</strong> due cerchi ti guidano: quello fermo è la nota giusta, l'altro è la tua. Portalo al centro.</p>
+            <p>L'<strong>estensione</strong> è di un'ottava; puoi sceglierne due, o tre in «Suona libero». Più ottave, meno spazio per ogni nota.</p>
+            <p>Lo stesso theremin c'è in Riprodurre: «Accorda con» → Theremin.</p>
             <p>Il video resta sul telefono: non si salva e non esce.</p>
           </div>
         </div>
@@ -46,6 +49,7 @@
           <button class="icon" data-close aria-label="Chiudi">✕</button>
         </header>
         <div class="seg tm-seg" id="tHand" aria-label="Mano dell'altezza"><button data-v="right" aria-pressed="true">Altezza a destra</button><button data-v="left" aria-pressed="false">Mancino</button></div>
+        <div class="seg tm-seg" id="tOct" aria-label="Estensione"><button data-v="1" aria-pressed="true">1 ottava</button><button data-v="2" aria-pressed="false">2 ottave</button><button data-v="3" aria-pressed="false">3 ottave</button></div>
         <div class="seg tm-seg" id="tMode"><button data-v="find" aria-pressed="true">Trova la nota</button><button data-v="train" aria-pressed="false">Allenamento</button><button data-v="free" aria-pressed="false">Suona libero</button></div>
         <p id="tPrompt" class="tm-prompt"></p>
         <div class="tm-stage">

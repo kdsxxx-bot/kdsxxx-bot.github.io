@@ -10,15 +10,17 @@
     <meta name="theme-color" content="#1d2230" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster Intonation</title>
-    <script type="module" crossorigin src="./assets/intonation-4ANORcy1.js"></script>
+    <script type="module" crossorigin src="./assets/intonation-VBCyWDzl.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
     <link rel="modulepreload" crossorigin href="./assets/tessere-DCb9m6Ef.js">
-    <link rel="modulepreload" crossorigin href="./assets/audio-wdEqIR_L.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-BIew85Bz.js">
+    <link rel="modulepreload" crossorigin href="./assets/audio-DqsXQRae.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-CQ9W5_JF.js">
     <link rel="modulepreload" crossorigin href="./assets/theme-DKXJrPrO.js">
-    <link rel="modulepreload" crossorigin href="./assets/meter-D3sZDsFf.js">
+    <link rel="modulepreload" crossorigin href="./assets/meter-MMGbx4D3.js">
+    <link rel="modulepreload" crossorigin href="./assets/theremin-DJaauiUs.js">
     <link rel="stylesheet" crossorigin href="./assets/theme-DgKhn_vS.css">
-    <link rel="stylesheet" crossorigin href="./assets/intonation-Bd4yoZg8.css">
+    <link rel="stylesheet" crossorigin href="./assets/theremin-BBJU8Bn2.css">
+    <link rel="stylesheet" crossorigin href="./assets/intonation-pNdtz6VO.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -121,7 +123,7 @@
           <button id="iSingHold" class="hold sing" data-noswipe>Tieni premuto e canta</button>
         </div>
         <!-- Riprodurre: come rispondi, come Tocca · Canta · Glissa nel Core; uguale all'impostazione -->
-        <div id="iProduceSeg" class="seg answer-seg produce-seg" aria-label="Riprodurre con" hidden><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div>
+        <div id="iProduceSeg" class="seg answer-seg produce-seg" aria-label="Riprodurre con" hidden><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Touch theremin</button><button data-v="hands">Theremin</button><button data-v="monochord">Monocordo</button></div>
         <div id="iFeedback" class="feedback" hidden>
           <p id="iVerdict" class="verdict-word"></p>
           <div id="iFbText" class="into-lead"></div>
@@ -165,7 +167,9 @@
         <div class="opt"><span>Microfono (per cantare)</span>
           <div class="seg" id="iSegMic"><button data-v="1">Acceso</button><button data-v="0">Spento</button></div></div>
         <div class="opt"><span>Accorda con</span>
-          <div class="seg seg4" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
+          <div class="seg seg5" id="iSegProduce"><button data-v="knob">Manopola</button><button data-v="glide">Glissato</button><button data-v="theremin">Touch theremin</button><button data-v="hands">Theremin</button><button data-v="monochord">Monocordo</button></div></div>
+        <div class="opt"><span>Estensione del theremin</span>
+          <div class="seg" id="iSegOct"><button data-v="1">1 ottava</button><button data-v="2">2 ottave</button></div></div>
         <div class="opt"><span>Cadenza</span>
           <div class="seg" id="iSegCadence"><button data-v="always">Sempre</button><button data-v="change">Al cambio di tonalità</button></div></div>
         <div class="opt" hidden><span>Barra dell'intonazione nel livello 3</span>
