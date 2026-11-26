@@ -10,18 +10,18 @@
     <meta name="theme-color" content="#1d2230" media="(prefers-color-scheme: dark)" />
     <link rel="apple-touch-icon" href="icon-180.png" />
     <title>Parnassum M∂ster Intonation</title>
-    <script type="module" crossorigin src="./assets/intonation-CemHQd9W.js"></script>
+    <script type="module" crossorigin src="./assets/intonation-CnySUpCk.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/subjects-xXFOKr2m.js">
     <link rel="modulepreload" crossorigin href="./assets/tessere-DCb9m6Ef.js">
-    <link rel="modulepreload" crossorigin href="./assets/audio-BhyB28f4.js">
-    <link rel="modulepreload" crossorigin href="./assets/icons-BF-3fC_0.js">
+    <link rel="modulepreload" crossorigin href="./assets/audio-ESWxxZjq.js">
+    <link rel="modulepreload" crossorigin href="./assets/icons-74ckr3Kv.js">
     <link rel="modulepreload" crossorigin href="./assets/progress-BFHjeU7x.js">
-    <link rel="modulepreload" crossorigin href="./assets/theme-DDw29bbM.js">
-    <link rel="modulepreload" crossorigin href="./assets/meter-B9tEgftC.js">
+    <link rel="modulepreload" crossorigin href="./assets/theme-CLr89M17.js">
+    <link rel="modulepreload" crossorigin href="./assets/meter-CseW2uOd.js">
     <link rel="modulepreload" crossorigin href="./assets/theremin-D1nVnPMW.js">
-    <link rel="stylesheet" crossorigin href="./assets/theme-CZ1GytAg.css">
+    <link rel="stylesheet" crossorigin href="./assets/theme-yBoKr22t.css">
     <link rel="stylesheet" crossorigin href="./assets/theremin-K9lS7bXt.css">
-    <link rel="stylesheet" crossorigin href="./assets/intonation-C9_AYEjZ.css">
+    <link rel="stylesheet" crossorigin href="./assets/intonation-D_qEUuTv.css">
   </head>
   <body>
     <button id="audioTap" class="audio-tap" hidden>🔇 Tocca qui per riattivare l’audio</button>
@@ -43,6 +43,21 @@
         <div class="home-bottom">
           <button id="iGo" class="primary ascend">Inizia</button>
           <p id="iNext" class="next-step"></p>
+        </div>
+      </section>
+
+      <!-- Prova libera sul bordone (Sandro, 26 nov., 09:05): dalla striscia degli strumenti, fuori dal percorso, senza voto.
+           Non salta Percepire: nel percorso lo strumento si usa quando l'app arriva ad Accorda. -->
+      <section id="iFree" class="screen" hidden>
+        <h2 id="iFreeTitle" class="serif-title into-free-title"></h2>
+        <p class="into-free-sub">Prova libera sul bordone · senza voto</p>
+        <div id="iFreeHost" class="ipad-host" data-noswipe></div>
+        <div id="iFreeKnob" class="knob" hidden>
+          <input id="iFreeKnobRange" type="range" min="-100" max="100" step="0.5" value="0" aria-label="Manopola" />
+        </div>
+        <div class="row-btns into-free-btns">
+          <button id="iFreeDrone" aria-pressed="true">Bordone</button>
+          <button id="iFreeNew" class="primary">Altra nota</button>
         </div>
       </section>
 
